@@ -24,3 +24,11 @@ _name define un modelo nuevo y _inherit no crea otro modelo, se lo agrega.
 
 2. ¿Qué hace tracking=True en el campo state? Lo verá funcionar en el paso 4.
 Hace que Odoo registre en el chatter cada cambio de ese campo con el valor anterior y el nuevo.
+
+# Paso 3
+
+1. En fields.One2many("prestamo.linea", "prestamo_id"), ¿qué indica cada parámetro?
+prestamo.linea es el modelo relacionado osea de las líneas.prestamo_id es el campo Many2one de ese modelo y apunta denuevo al préstamo, así Odoo sabe qué líneas pertenecen a cada préstamo.
+
+2. ¿Qué pasa con las líneas cuando se borra un préstamo? ¿Qué parte del código lo define?
+Las líneas se borran también y lo define ondelete="cascade" en el campo prestamo_id de la carpeta modelo prestamo.linea.
