@@ -48,3 +48,11 @@ Porque solo filtra cuando se elige el equipo en la interfaz, despues el equipo p
 
 2. ¿En qué momento se ejecuta un método con @api.constrains? ¿Y la validación de action_prestar?
 Se ejecuta al guardar, crear o modificar el registro. Y la validacion se ejecuta al pulsar el boton.
+
+# Paso 6
+
+1. ¿Qué pasa si arrastra una tarjeta del kanban a otra columna? ¿Por qué?
+El equipo cambia de estado porque son los valores del campo de estado y cambia el registro.
+
+2. El campo prestamo_ids se agregó a res.partner. ¿Se crea una columna nueva en la tabla decontactos? Explique.
+No se crea ninguna columna porque One2many no guarda datos en su tabla. La columna de verdad es la partner_id en la tabla de prestamo.prestam, y prestamo_ids busca dentro a los prestamos de cada contacto.
