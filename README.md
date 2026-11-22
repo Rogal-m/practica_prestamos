@@ -32,3 +32,11 @@ prestamo.linea es el modelo relacionado osea de las líneas.prestamo_id es el ca
 
 2. ¿Qué pasa con las líneas cuando se borra un préstamo? ¿Qué parte del código lo define?
 Las líneas se borran también y lo define ondelete="cascade" en el campo prestamo_id de la carpeta modelo prestamo.linea.
+
+# Paso 4
+
+1. Los botones ya se ocultan según el estado. ¿Por qué los métodos vuelven a validar el estado?
+Ocultar un botón solo cambia lo que se ve en la interfaz, osea la vista es comodidad porque el método es la seguridad.
+
+2. ¿Qué hace prestamo.linea_ids.equipo_id.write(...)? ¿Por qué no hace falta un for para cada equipo?
+Obtiene todos los equipos de las líneas del préstamo y aplica el cambio a todos a la vez. No hace falta un for para cada uno porque Odoo trabaja con conjuntos de registros.
