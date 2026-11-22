@@ -40,3 +40,11 @@ Ocultar un botón solo cambia lo que se ve en la interfaz, osea la vista es como
 
 2. ¿Qué hace prestamo.linea_ids.equipo_id.write(...)? ¿Por qué no hace falta un for para cada equipo?
 Obtiene todos los equipos de las líneas del préstamo y aplica el cambio a todos a la vez. No hace falta un for para cada uno porque Odoo trabaja con conjuntos de registros.
+
+# Paso 5
+
+1. El campo equipo_id ya filtra los equipos disponibles. ¿Por qué hace falta el TODO 5?
+Porque solo filtra cuando se elige el equipo en la interfaz, despues el equipo puede cambiar de estado y el domain tampoco protege si los datos entran por codigo o importación.
+
+2. ¿En qué momento se ejecuta un método con @api.constrains? ¿Y la validación de action_prestar?
+Se ejecuta al guardar, crear o modificar el registro. Y la validacion se ejecuta al pulsar el boton.
